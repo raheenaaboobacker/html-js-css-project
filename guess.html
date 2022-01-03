@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Are you ready to guess</h1>
+    <p>enter the number you guessed here</p>
+    <input type="number" id="guess">
+    <input type="submit" value="guess the number" onclick="myguess()">
+    <p id="demo"></p>
+    <script>
+        var randomnumber = Math.floor(Math.random() * 100)
+            // console.log(randomnumber)
+
+        function myguess() {
+            let myguess = guess.value;
+
+            if (randomnumber == myguess) {
+                // document.write("your guess is right");
+                document.getElementById("demo").innerHTML = "your guess is right"
+            } else if (myguess < randomnumber) {
+                // document.write("your guess is too small...");
+                document.getElementById("demo").innerHTML = "your guess is small"
+            } else {
+                // document.write("your guess is too large");
+                document.getElementById("demo").innerHTML = "your guess is large"
+            }
+        }
+    </script>
+</body>
+
+</html>

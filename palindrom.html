@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function getpal() {
+            var str = document.getElementById('num').value;
+            var rstr = ''
+            for (var i = str.length - 1; i >= 0; i--) {
+                rstr += str[i];
+            }
+
+            if (rstr !== str) {
+                document.writes("string is not a palindrom");
+            } else {
+                document.write("string is a palindrom");
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <label>enter the string</label>
+    <input type="text" id="num">
+    <br>
+    <input type="button" value="palindrom" onclick="getpal()">
+</body>
+
+</html>

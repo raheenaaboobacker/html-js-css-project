@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            background-color: slategray;
+        }
+        
+        #input1 {
+            background-color: tomato;
+            height: 30px;
+        }
+        
+        #input2 {
+            background-color: tomato;
+            height: 30px;
+        }
+        
+        #l1 {
+            background-color: rgb(180, 144, 25);
+            height: 30px;
+        }
+        
+        #b1 {
+            height: 40px;
+            background-color: thistle;
+            width: 200px;
+        }
+    </style>
+    <script>
+        function convert() {
+            if (document.getElementById("input1").value == '' || document.getElementById("input2").value == '') {
+                alert("cannot enter the values, please enter")
+            }
+            var f = document.getElementById("input1").value;
+            var i = document.getElementById("input2").value;
+            var cm1 = f * 30.48;
+            var cm2 = i * 2.54;
+            var total = cm1 + cm2;
+
+            document.getElementById("p1").innerHTML = total + "cm";
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+
+
+        <h1>Height Converter</h1>
+
+        <br>
+        <label id="l1"><h3>foot</h3></label>
+        <input type="text" name="foot" id="input1">
+        <br>
+        <label id="l1"><h3>inch</h3></label>
+        <input type="text" name="inch" id="input2">
+        <br>
+        <br>
+        <br><br>
+        <input type="button" id="b1" value="convert to centimiter" onclick="convert()">
+        <p id="p1"></p>
+    </center>
+</body>
+
+</html>

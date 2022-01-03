@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label>enter the limit</label>
+    <input type="number" id="txt">
+    <br>
+    <input type="submit" value="odd" onclick="odd()">
+    <input type="submit" value="even" onclick="even()">
+    <script>
+        function odd() {
+            var num = document.getElementById('txt').value
+            for (i = 1; i <= num; i++) {
+                if (i % 2 == 1) {
+                    document.write(i)
+                    document.write("<br>")
+                }
+            }
+        }
+
+        function even() {
+            var num = document.getElementById('txt').value
+            for (i = 1; i <= num; i++) {
+                if (i % 2 == 0) {
+                    document.write(i)
+                    document.write("<br>")
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

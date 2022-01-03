@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        body {
+            background-color: violet;
+        }
+        
+        button {
+            height: 100px;
+            width: 100px;
+            background-color: rgb(9, 196, 155);
+            border: 4px solid brown;
+            border-radius: 50%;
+        }
+        
+        #rock {
+            font-size: xx-large;
+        }
+    </style>
+    <script>
+        var cscore = 0;
+        var uscore = 0;
+
+        function find_comp_choice() {
+            var randomnumber = Math.floor(Math.random() * 3);
+            if (randomnumber == 0) {
+                comp_choice = "rock";
+            }
+            if (randomnumber == 1) {
+                comp_choice = "paper";
+            }
+            if (randomnumber == 2) {
+                comp_choice = "scissor";
+            }
+            console.log(comp_choice);
+        }
+
+        function cscore_incr() {
+            if (cscore == 4) {
+                window.alert("GAME OVER!!!computer win");
+                document.getElementById("score").innerHTML = "0:0"
+                cscore = 0;
+                uscore = 0;
+
+            } else if (cscore < 5) {
+                cscore = cscore + 1
+                document.getElementById("score").innerHTML = cscore + ":" + uscore
+            }
+        }
+
+        function uscore_incr() {
+            if (uscore == 4) {
+                window.alert("GAME OVER!!!You win");
+                document.getElementById("score").innerHTML = "0:0"
+                cscore = 0;
+                uscore = 0;
+
+
+            } else if (uscore < 5) {
+                uscore = uscore + 1
+                document.getElementById("score").innerHTML = cscore + ":" + uscore
+            }
+        }
+
+
+        function rock() {
+            find_comp_choice();
+
+            // let user_choice = "rock"
+            if (comp_choice == "rock") {
+                alert("game is tie")
+            } else if (comp_choice == "paper") {
+                window.alert("computer win,paper cover rock");
+                cscore_incr();
+
+            } else if (comp_choice == "scissor") {
+                window.alert("You win,rock smashes scissor");
+                uscore_incr();
+                // document.getElementById("score").innerHTML = cscore + ":" + uscore
+            }
+
+        }
+
+        function paper() {
+            find_comp_choice();
+
+            // let user_choice = "paper"
+            if (comp_choice == "paper") {
+                alert("game is tie")
+            } else if (comp_choice == "rock") {
+                window.alert("paper cover rock,user won");
+                uscore_incr();
+                document.getElementById("score").innerHTML = cscore + ":" + uscore
+            } else if (comp_choice == "scissor") {
+                window.alert("scissor cut the paper,computer win");
+                cscore_incr();
+                // document.getElementById("score").innerHTML = cscore + ":" + uscore
+            }
+
+        }
+
+        function scissor() {
+            find_comp_choice();
+
+            // let user_choice = "scissor"
+            if (comp_choice == "scissor") {
+                alert("game is tie")
+            } else if (comp_choice == "rock") {
+                window.alert("rock smashes scissor,computer won");
+                cscore_incr();
+                document.getElementById("score").innerHTML = cscore + ":" + uscore
+            } else {
+                window.alert("scissor cut the paper,user won");
+                uscore_incr();
+                // document.getElementById("score").innerHTML = cscore + ":" + uscore
+
+            }
+
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <h1>BASIC ROCK PAPER SCISSOR GAME</h1>
+        <h3>Win five round to be the victor</h3>
+        <div>
+            <h2>computer<span id="score"> 0:0 </span>user</h2>
+
+
+        </div>
+
+        <button onclick="rock()" id="rock" value="rock">
+        <i class="fa fa-hand-rock-o" aria-hidden="true" id="rock"></i>
+        </button>
+        <button onclick="paper()">
+            <i class="fa fa-hand-paper-o" aria-hidden="true" id="rock"></i>
+        </button>
+        <button onclick="scissor()">
+            <i class="fa fa-hand-scissors-o" aria-hidden="true" id="rock"></i>
+        </button>
+    </center>
+</body>
+
+</html>

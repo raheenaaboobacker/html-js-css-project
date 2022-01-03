@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            // document.write(fname);
+            // console.log(fname);
+            if (document.myform.fname.value == "") {
+                alert("please enter the first name");
+                document.fname.value(focus);
+                return false;
+            }
+            if (document.myform.lname.value == "") {
+                alert("please enter the Last name");
+                document.lname.value(focus);
+                return false;
+            }
+            if (document.myform.age.value == "") {
+                alert("please enter the age");
+                document.age.value(focus);
+                return false;
+            }
+
+            if (document.myform.email.value == "") {
+                alert("please enter the email");
+                document.email.value(focus);
+                return false;
+            }
+            alert("validated")
+        }
+    </script>
+</head>
+
+<body>
+    <form action="get" name="myform">
+        <label>First name</label>
+        <input type="text" name="fname" placeholder="fname">
+        <br>
+        <label>Last name</label>
+        <input type="text" name="lname" placeholder="lname">
+        <br>
+        <label>age</label>
+        <input type="number" name="age" placeholder="age">
+        <br>
+        <label>email id</label>
+        <input type="email" name="email" placeholder="email">
+        <br>
+        <input type="button" value="submit" onclick="return (validate())">
+    </form>
+</body>
+
+</html>
